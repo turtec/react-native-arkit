@@ -1,0 +1,86 @@
+/*
+ let scene = SCNScene()
+    
+  // 2
+  let boxGeometry = SCNBox(width: 10.0, height: 10.0, length: 10.0, chamferRadius: 1.0)
+  let boxNode = SCNNode(geometry: boxGeometry)
+  scene.rootNode.addChildNode(boxNode)
+    
+  // 3
+  sceneView.scene = scene
+*/
+
+
+// setup the mount function on native side  
+  // RCT_EXPORT_METHOD(addBox:(SCNBox *)geometry node:(SCNNode *)node frame:(NSString *)frame) {
+  //   NSLog(@"Add Box");
+  //   node.geometry = geometry;
+  //   [[RCTARKitNodes sharedInstance] addNodeToScene:node inReferenceFrame:frame];
+  //} 
+
+
+
+  /*
+
+
+SCNBox *plane = [SCNBox boxWithWidth: 1000 height:1000 length: 40 chamferRadius: 10];
+plane.firstMaterial.diffuse.contents = [UIColor colorWithWhite: 0.2 alpha: 1.0];
+SCNNode *planeNode = [SCNNode nodeWithGeometry: plane];
+planeNode.position = SCNVector3Make(100, 100,  0);
+planeNode.castsShadow = shadows;
+[_baseNode addChildNode: planeNode];
+
+
+SCNNode *lightNode = [SCNNode node];
+lightNode.light = [SCNLight light];
+lightNode.light.type = SCNLightTypeSpot;
+lightNode.light.spotInnerAngle = 0;
+lightNode.light.spotOuterAngle = 45;
+lightNode.light.shadowRadius = 10.0;
+lightNode.light.zFar = 10000;
+lightNode.light.shadowColor = [UIColor colorWithRed: 0.0 green: 1.0 blue:0.0 alpha: 1.0];
+lightNode.castsShadow = shadows;
+lightNode.position = SCNVector3Make(100, 100, 170);
+[_baseNode addChildNode:lightNode];
+
+SCNNode *lightNode2 = [SCNNode node];
+lightNode2.light = [SCNLight light];
+lightNode2.light.type = SCNLightTypeAmbient;
+lightNode2.light.color = [UIColor colorWithRed: 0.3 green: 0.3 blue:0.3 alpha: 1.0];
+[_baseNode addChildNode: lightNode2];
+*/
+
+
+/*let ambientLightNode = SCNNode()
+ambientLightNode.light = SCNLight()
+ambientLightNode.light!.type = SCNLightTypeAmbient
+ambientLightNode.light!.color = UIColor(white: 0.67, alpha: 1.0)
+scene.rootNode.addChildNode(ambientLightNode)*/   
+    /*
+
+
+lightNode.light = [SCNLight light];
+lightNode.light.type = SCNLightTypeSpot;
+lightNode.light.spotInnerAngle = 0;
+lightNode.light.spotOuterAngle = 45;
+lightNode.light.shadowRadius = 10.0;
+lightNode.light.zFar = 10000;
+lightNode.light.shadowColor = [UIColor colorWithRed: 0.0 green: 1.0 blue:0.0 alpha: 1.0];
+lightNode.castsShadow = shadows;
+lightNode.position = SCNVector3Make(100, 100, 170);
+
+
+    //add type 
+    //CGFloat length = [shape[@"length"] floatValue];
+    //CGFloat chamfer = [shape[@"chamfer"] floatValue];
+    //SCNBox(width: 10.0, height: 10.0, length: 10.0, chamferRadius: 1.0)
+    SCNBox *lightNode = [SCNBox boxWithWidth:width height:height length:length chamferRadius:chamfer];
+    /*let ambientLightNode = SCNNode()
+        ambientLightNode.light = SCNLight()
+        ambientLightNode.light!.type = SCNLightTypeAmbient
+        ambientLightNode.light!.color = UIColor(white: 0.67, alpha: 1.0)
+        scene.rootNode.addChildNode(ambientLightNode)*/
+
+
+    /*SCNMaterial *material = [self SCNMaterial:json[@"material"]];
+    geometry.materials = @[material, material, material, material, material, material];*/
