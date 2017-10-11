@@ -4,14 +4,10 @@ import createArComponent from './lib/createArComponent';
 
 const ARLight = createArComponent(
   { mount: NativeModules.ARLightManager.mount, 
-    pick: ['text', 'font'] },
+    pick: ['light'] },
   {
-    text: PropTypes.string,
-    font: PropTypes.shape({
-      name: PropTypes.string,
-      size: PropTypes.number,
-      depth: PropTypes.number,
-      chamfer: PropTypes.number,
+    light: PropTypes.shape({
+      color: PropTypes.string
     }),
   },
 );

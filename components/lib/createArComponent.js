@@ -38,6 +38,15 @@ const nodeProps = (id, props) => ({
 });
 
 export default (mountConfig, propTypes = {}) => {
+
+  /**
+   for box: { shape: { width: 0.05, height: 0.05, length: 0.05, chamfer: 0.01 },
+    material: { diffuse: 3431530376 } }
+   for light: {
+      { material: undefined }
+   } 
+   takes props as parameter thes props
+  */
   const getShapeAndMaterialProps = props =>
     typeof mountConfig === 'string'
       ? {
@@ -56,7 +65,35 @@ export default (mountConfig, propTypes = {}) => {
       : mountConfig.mount;
 
   
+  /* 
+    input parameter props (properties set by the component markup)
+    - for box:
+    { position: { x: 0.1, y: 0.1, z: -0.2 },
+        shape: { width: 0.05, height: 0.05, length: 0.05, chamfer: 0.01 },
+        material: { diffuse: '#88ff88cc' } }
+    - for light:
+    { position: { x: 1, y: 1, z: 1 },
+        lightSpec: { something: 0.5 } }  
+    
+    - internaly the function seperates the props into different objects
+      -> gets the shape and material 
+      -> gets the id and position by calling the nodeProps function,
+         These function picks some properties out of the markup-props
+         Porperties to pick are defined in the NODE_PROPS const
+        -> return for box { id: '1Uk6XXvPBX', position: { x: 0.1, y: 0.1, z: -0.2 } }
+        -> return for light { id: '1Uk6XXvPBW', position: { x: 1, y: 1, z: 1 } }
+    - 
+    - and the props of the node itself
+    -> 
+    -> 
+  */
   const mount = (id, props) => {
+    console.log('the props');
+    console.log(props);
+    let shapeAndMaterial = getShapeAndMaterialProps(props);
+    console.log(shapeAndMaterial);
+    let theNodeProps = nodeProps(id, props);
+    console.log(theNodeProps);
     mountFunc(
       getShapeAndMaterialProps(props),
       nodeProps(id, props),

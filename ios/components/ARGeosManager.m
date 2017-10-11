@@ -14,6 +14,12 @@
 RCT_EXPORT_MODULE()
 
 RCT_EXPORT_METHOD(addBox:(SCNBox *)geometry node:(SCNNode *)node frame:(NSString *)frame) {
+    /*
+    SCNBox *myBox = [SCNBox boxWithWidth:8 height:8 length:8 chamferRadius:0];
+    SCNNode *myBoxNode = [SCNNode nodeWithGeometry:myBox];
+    myBoxNode.position = SCNVector3Make(0, 0, 0);
+    [scene.rootNode addChildNode:myBoxNode]
+    */
     node.geometry = geometry;
     [[RCTARKitNodes sharedInstance] addNodeToScene:node inReferenceFrame:frame];
 }
